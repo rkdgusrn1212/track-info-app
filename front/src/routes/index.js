@@ -25,6 +25,7 @@ import edu from './pages/edu';
 import defence from './pages/defence';
 
 import apply from './pages/apply';
+import graduate from './pages/graduate';
 
 // Child origin routes
 import login from './login';
@@ -95,6 +96,7 @@ export default [
       hci,
 
       apply,
+      graduate,
 
       // contact,
       table,

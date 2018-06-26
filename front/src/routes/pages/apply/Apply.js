@@ -22,7 +22,7 @@ class Apply extends React.Component {
                 <div style={{textAlign: "center"}} className="row">
                     <Col md={6}>
                         <a href="http://www.naver.com">
-                            <img style={{width: "100%"}} src={applyImg}/>
+                            <img style={{width: "60%"}} src={applyImg}/>
                         </a>
                     </Col>
                     <br/>
