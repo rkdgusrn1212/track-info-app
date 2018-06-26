@@ -2,16 +2,15 @@ import React,{PropTypes} from 'react';
 import {PageHeader} from 'react-bootstrap';
 
 
-const title = 'HCI & 비쥬얼컴퓨팅';
+const title = '사물인터넷';
 
-class Hci extends React.Component {
-
+class Iot extends React.Component {
     constructor(props, context) {
         super(props, context);
         context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['컴퓨터네트워크', '신호및시스템', '확률통계및프로그래밍'],
+            sub : ['통신시스템', '디지털신호처리', '임베디드시스템', '네트워크프로그래밍', '정보보호개론', '데이터통신', '무선통신', '스마트그리드', '인터넷보안']
         }
     }
 
@@ -68,14 +67,14 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>{title}</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        사물인터넷은 각종 사물에 센서와 통신 기능을 내장하여 인터넷에 연결하는 기술. 즉, 무선 통신을 통해 각종 사물을 연결하는 기술을 의미한다. 인터넷으로 연결된 사물들이 데이터를 주고받아 스스로 분석하고 학습한 정보를 사용자에게 제공하거나 사용자가 이를 원격 조정할 수 있는 인공지능 기술이다. 여기서 사물이란 가전제품, 모바일 장비, 웨어러블 디바이스 등 다양한 임베디드 시스템이 된다.
                     </p>
                 </div>
                 <div className="row">
@@ -97,6 +96,6 @@ class Hci extends React.Component {
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
+Iot.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default Hci;
+export default Iot;

@@ -5,3 +5,9 @@
     $ npm install
     $ npm run clean
     $ npm start
+
+# Dependencies
+[python]
+* Flask
+* Selenium
+* Beautifulsoup4

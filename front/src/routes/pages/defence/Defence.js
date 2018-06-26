@@ -1,17 +1,13 @@
-import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
 
+import React, { PropTypes } from 'react';
+import { PageHeader } from 'react-bootstrap';
 
-const title = 'HCI & 비쥬얼컴퓨팅';
-
-class Hci extends React.Component {
-
+class Defence extends React.Component {
     constructor(props, context) {
         super(props, context);
-        context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['웹해킹과보안', '사이버전개론', '시스템해킹과보안', '사이버관제및대응', '사이버공방종합훈련', '디지털포렌식', '네트워크해킹과 보안', '악성코드분석'],
+            sub : []
         }
     }
 
@@ -68,35 +64,30 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>사이버 국방</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        사이버 국방.
                     </p>
                 </div>
-                <div className="row">
-                    <h4>트랙 기초 교과</h4>
+
+                 <div className="row">
+                    <h4>교과목들</h4>
                     <table className="track-info-table">
                         <tbody>
                         {baseItems}
                         </tbody>
                     </table>
-                    <h4>트랙 응용 교과</h4>
-                    <table className="track-info-table">
-                        <tbody>
-                        {subItems}
-                        </tbody>
-                    </table>
+
+                    <p>이 외 군관련 과목 7학점 이상 이수</p>
                 </div>
             </div>
         );
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
-
-export default Hci;
+export default Defence;

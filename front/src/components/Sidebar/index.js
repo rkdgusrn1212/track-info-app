@@ -23,7 +23,7 @@ class Sidebar extends Component {
           <ul className="nav in" id="side-menu">
           <li>
            <div style={{height:'130px', width:'100%', 'paddingTop':'20px'}}>
-            <Image style={{width:'80px', height:'80px', margin:'0 auto'}} src="./logo.png" circle responsive/>
+            <Image style={{width:'80px', height:'80px', margin:'0 auto'}} src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" circle responsive/>
             <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'textAlign':'center'}}>홍길동</h5>
            </div>
           </li>
@@ -112,8 +112,13 @@ class Sidebar extends Component {
               </ul>
             </li>
             <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/apply'); }} >
+                <i className="fa fa-arrow-circle-up fa-fw" /> &nbsp;트랙 신청
+              </a>
+            </li>
+            <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/graduate'); }} >
-                <i className="fa fa-university fa-fw" /> &nbsp;대학원
+                <i className="fa fa-university fa-fw" /> &nbsp;트랙 심화과정
               </a>
             </li>
             <li>

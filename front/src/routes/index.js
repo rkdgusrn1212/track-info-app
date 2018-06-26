@@ -14,14 +14,18 @@ import App from '../components/App';
 import home from './home';
 import trackinfo from './pages/trackInfo'
 import hci from './pages/hci'
-/*import multi from './pages/multi'
+import multi from './pages/multi'
 import iot from './pages/iot'
+import systemAvoid from './pages/system'
 import ai from './pages/ai'
 import vr from './pages/vr'
 import security from './pages/security'
 import data from './pages/data';
 import edu from './pages/edu';
-import defence from './pages/defence';*/
+import defence from './pages/defence';
+
+import apply from './pages/apply';
+import graduate from './pages/graduate';
 
 // Child origin routes
 import login from './login';
@@ -58,15 +62,15 @@ export default [
     path: '/track',
     children: [
       hci,
-      /*multi,
+      multi,
       iot,
-      system,
+      systemAvoid,
       ai,
       vr,
       security,
       data,
       edu,
-      defence,*/
+      defence,
     ],
     async action({ next, render, context }) {
       const component = await next();
@@ -90,6 +94,9 @@ export default [
       home,
       trackinfo,
       hci,
+
+      apply,
+      graduate,
 
       // contact,
       table,

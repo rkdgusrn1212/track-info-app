@@ -1,17 +1,13 @@
-import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
 
+import React, { PropTypes } from 'react';
+import { PageHeader } from 'react-bootstrap';
 
-const title = 'HCI & 비쥬얼컴퓨팅';
-
-class Hci extends React.Component {
-
+class VR extends React.Component {
     constructor(props, context) {
         super(props, context);
-        context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['멀티미디어프로그래밍', '선형대수및 프로그래밍', '컴퓨터그래픽스'],
+            sub : ['고급실시간그래픽스', '가상현실', '멀티미디어', '게임프로그래밍', '디지털사운드', '컴퓨터애니메이션', '증강현실', 'HCI개론']
         }
     }
 
@@ -68,16 +64,17 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>가상현실</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        가상현실을 설명하는 데 필요한 요소는 3차원의 공간성, 실시간의 상호작용성, 몰입 등이다. 3차원의 공간성이란 사용자가 실재하는 물리적 공간에서 느낄 수 있는 상호작용과 최대한 유사한 경험을 할 수 있는 가상공간을 만들어 내기 위해 현실 공간에서의 물리적 활동 및 명령을 컴퓨터에 입력하고 그것을 다시 3차원의 유사 공간으로 출력하는 데 필요한 요소를 의미한다. 3차원 공간을 구현하는 데 필요한 요소는 그것을 실시간으로 출력하기 위한 컴퓨터와 키보드, 조이스틱, 마우스, 음성 탐지기, 데이터 등이 있으며 이러한 장비들을 통해 사용자는 가상현실에 더욱 몰입할 수 있다.
                     </p>
                 </div>
+                
                 <div className="row">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
@@ -97,6 +94,4 @@ class Hci extends React.Component {
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
-
-export default Hci;
+export default VR;

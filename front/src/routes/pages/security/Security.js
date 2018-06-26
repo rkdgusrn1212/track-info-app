@@ -1,17 +1,13 @@
-import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
 
+import React, { PropTypes } from 'react';
+import { PageHeader } from 'react-bootstrap';
 
-const title = 'HCI & 비쥬얼컴퓨팅';
-
-class Hci extends React.Component {
-
+class Security extends React.Component {
     constructor(props, context) {
         super(props, context);
-        context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['어셈블리어', '보안프로그래밍', '컴퓨터네트워크'],
+            sub : ['대칭키암호론', '공개키암호론', '시스템해킹과보안', '인터넷보안', '악성코드분석', '네트워크해킹과보안', '디지털포렌식']
         }
     }
 
@@ -68,16 +64,17 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>정보보호</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        정보의 수집, 가공, 저장, 검색, 송신, 수신 도중에 정보의 훼손, 변조, 유출 등을 방지하기 위한 관리적, 기술적 방법을 의미한다.
                     </p>
                 </div>
+
                 <div className="row">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
@@ -97,6 +94,4 @@ class Hci extends React.Component {
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
-
-export default Hci;
+export default Security;

@@ -4,7 +4,7 @@ import { PageHeader } from 'react-bootstrap';
 
 import s from './Home.css';
 
-const PageTitle = '트랙 제도';
+const PageTitle = "아카데미아";
 
 class Home extends React.Component {
     static propTypes = {};

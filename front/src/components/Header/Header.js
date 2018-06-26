@@ -29,7 +29,8 @@ function Header() {
       <Navbar fluid={true}  style={ {margin: 0} }>
           <Brand>
             <span>
-              <img src={logo} alt="Start React" title="Start React" />
+              <img src={logo} alt="Start React" title="Start React"/>
+              <span>&nbsp;<b>ACADEMIA</b></span>
                 <button type="button" className="navbar-toggle" onClick={() => {toggleMenu();}} style={{position: 'absolute', right: 0, top: 0}}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
@@ -80,7 +81,7 @@ function Header() {
                       <strong>See All Tasks</strong> <i className="fa fa-angle-right"></i>
                   </MenuItem>
                 </NavDropdown>
-                
+
            <NavDropdown title={<i className="fa fa-user fa-fw"></i> } id = 'navDropdown4'>
                   <MenuItem eventKey="1">
                     <span> <i className="fa fa-user fa-fw"></i> User Profile </span>

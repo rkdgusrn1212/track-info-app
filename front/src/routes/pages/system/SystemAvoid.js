@@ -2,16 +2,15 @@ import React,{PropTypes} from 'react';
 import {PageHeader} from 'react-bootstrap';
 
 
-const title = 'HCI & 비쥬얼컴퓨팅';
+const title = '시스템응용';
 
-class Hci extends React.Component {
-
+class SystemAvoid extends React.Component {
     constructor(props, context) {
         super(props, context);
         context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['디지털시스템', '마이크로컴퓨터', 'VHDL프로그래밍'],
+            sub : ['데이터베이스', '프로그래밍언어의개념', '소프트웨어공학', '멀티코어프로그래밍', '시스템모델링', '분산시스템', '컴파일러', 'UNIX프로그래밍', '임베디드시스템']
         }
     }
 
@@ -68,14 +67,14 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>{title}</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        응용 소프트웨어를 실행하기 위한 플랫폼을 제공하고 컴퓨터 하드웨어를 동작, 접근할 수 있도록 설계된 컴퓨터 소프트웨어이다.[1] 컴퓨터 시스템의 운영을 위한 모든 컴퓨터 소프트웨어에 대한 일반 용어이다.
                     </p>
                 </div>
                 <div className="row">
@@ -97,6 +96,6 @@ class Hci extends React.Component {
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
+SystemAvoid.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default Hci;
+export default SystemAvoid;
