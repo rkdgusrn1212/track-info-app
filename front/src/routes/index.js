@@ -47,6 +47,15 @@ import mytrack from './pages/mytrack';
 
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import Footer from '../components/Footer';
+
+const backgroundImg = require('../public/background.png');
+
+const background = {
+  backgroundImage: `url(${backgroundImg})`,
+  backgroundPosition: '52% 52%',
+  backgroundSize: 2800
+}
 
 export default [
 
@@ -59,7 +68,11 @@ export default [
       const component = await next();
       if (component === undefined) return component;
       return render(
-        <App context={context}>{component}</App>
+        <App context={context}>
+          <div style={background}>
+            {component}
+          </div>
+        </App>
       );
     },
   },{
@@ -80,13 +93,14 @@ export default [
       const component = await next();
       if (component === undefined) return component;
       return render(
-        <div>
+        <div style={background}>
           <Header />
           <div className="page-content">
             <Sidebar />
             <div id="page-wrapper" className="page-wrapper">
               <App context={context}>{component}</App>
             </div>
+            <Footer />
           </div>
         </div>
       );
@@ -134,13 +148,14 @@ export default [
       // console.log('inside dasdboard component', component);
       if (component === undefined) return component;
       return render(
-        <div>
+        <div style={background}>
           <Header />
           <div className="page-content">
             <Sidebar />
             <div id="page-wrapper" className="page-wrapper">
               <App context={context}>{component}</App>
             </div>
+            <Footer />
           </div>
         </div>
       );
