@@ -28,6 +28,7 @@ class Header extends React.Component{
 
   onLogout(){
     localStorage.removeItem('user');
+    location.reload();
   }
 
   renderLogout(){
