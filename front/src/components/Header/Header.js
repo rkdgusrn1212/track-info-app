@@ -24,7 +24,12 @@ const logo = require('./sejong_logo.png');
 const sejongBar = require('./sejong_bar.jpg');
 const sejongBarTitle = require('./sejong_deco_title.png');
 
-function Header() {
+class Header extends React.Component{
+
+  onLogout(){
+    localStorage.removeItem('user');
+  }
+  render() {
   return (
     <div id="wrapper" className="content">
       <Navbar fluid={true}>
@@ -91,7 +96,7 @@ function Header() {
                     <span><i className="fa fa-gear fa-fw"></i> Settings </span>
                   </MenuItem>
                   <MenuItem divider />
-                  <MenuItem eventKey = "4" onClick = {(event) => { history.push('/login');}}>
+                  <MenuItem eventKey = "4" onClick = {this.onLogout()}>
                     <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
                   </MenuItem>
             </NavDropdown>
@@ -104,6 +109,7 @@ function Header() {
       </Navbar>
     </div>
   );
+  }
 }
 function toggleMenu(){
     if($(".navbar-collapse").hasClass('collapse')){
@@ -112,6 +118,5 @@ function toggleMenu(){
     else{
       $(".navbar-collapse").addClass('collapse');
     }
-  }
-
+}
 export default Header;
