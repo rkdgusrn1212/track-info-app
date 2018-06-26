@@ -16,7 +16,7 @@ import trackinfo from './pages/trackInfo'
 import hci from './pages/hci'
 import multi from './pages/multi'
 import iot from './pages/iot'
-import system from './pages/system'
+import systemAvoid from './pages/system'
 import ai from './pages/ai'
 import vr from './pages/vr'
 import security from './pages/security'
@@ -61,7 +61,7 @@ export default [
       hci,
       multi,
       iot,
-      system,
+      systemAvoid,
       ai,
       vr,
       security,

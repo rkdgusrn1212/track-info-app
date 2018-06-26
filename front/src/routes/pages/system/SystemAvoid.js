@@ -4,7 +4,7 @@ import {PageHeader} from 'react-bootstrap';
 
 const title = '시스템응용';
 
-class Multi extends React.Component {
+class SystemAvoid extends React.Component {
     constructor(props, context) {
         super(props, context);
         context.setTitle(title);
@@ -96,6 +96,6 @@ class Multi extends React.Component {
     }
 }
 
-System.contextTypes = { setTitle: PropTypes.func.isRequired };
+SystemAvoid.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default System;
+export default SystemAvoid;

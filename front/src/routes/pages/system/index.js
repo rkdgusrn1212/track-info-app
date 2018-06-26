@@ -9,14 +9,14 @@
 
 import React from 'react';
 // import App from '../../components/App';
-import System from './System';
+import SystemAvoid from './SystemAvoid';
 
 export default {
 
   path: '/system',
 
   action() {
-    return <System />;
+    return <SystemAvoid />;
   },
 
 };
