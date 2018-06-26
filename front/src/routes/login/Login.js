@@ -32,13 +32,53 @@ class Login extends React.Component{
     this.state={
       userId:"",
       password:"",
+      state:"READY"
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event){
     this.setState({
       [event.target.id]:event.target.value
+    });
+  }
+
+  handleSubmit(){
+    alert("submit");
+    fetch("http://localhost:5000/login")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          alert("성공");
+          /*this.setState({
+            isLoaded: true,
+            items: result.items
+          });*/
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          alert("실패")
+          /*this.setState({
+            isLoaded: true,
+            error
+          });*/
+        }
+      )
+  }
+
+
+  onSuccess(){
+    this.setState({
+      state:"SUCCESS"
+    });
+  }
+
+  onFail(){
+    this.setState({
+      state:"FAIL"
     });
   }
 
@@ -51,7 +91,7 @@ class Login extends React.Component{
 
           <Panel header={<h3>Please Sign In</h3>} className="login-panel">
 
-            <form action="http://localhost:5000/login" role="form">
+            <form role="form">
               <fieldset>
                 <div className="form-group">
                   <FormControl
@@ -73,7 +113,7 @@ class Login extends React.Component{
                   />
                 </div>
                 <Checkbox label="Remember Me" > Remember Me </Checkbox>
-                <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
+                <Button type="button" bsSize="large" bsStyle="success" onClick={this.handleSubmit}  block>Login</Button>
               </fieldset>
             </form>
 
