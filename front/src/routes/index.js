@@ -46,6 +46,7 @@ import error from './error';
 import mytrack from './pages/mytrack';
 
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 export default [
 
@@ -81,8 +82,11 @@ export default [
       return render(
         <div>
           <Header />
-          <div id="page-wrapper" className="page-wrapper">
-            <App context={context}>{component}</App>
+          <div className="page-content">
+            <Sidebar />
+            <div id="page-wrapper" className="page-wrapper">
+              <App context={context}>{component}</App>
+            </div>
           </div>
         </div>
       );
@@ -132,8 +136,11 @@ export default [
       return render(
         <div>
           <Header />
-          <div id="page-wrapper" className="page-wrapper">
-            <App context={context}>{component}</App>
+          <div className="page-content">
+            <Sidebar />
+            <div id="page-wrapper" className="page-wrapper">
+              <App context={context}>{component}</App>
+            </div>
           </div>
         </div>
       );

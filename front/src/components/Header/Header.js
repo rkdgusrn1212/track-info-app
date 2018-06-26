@@ -19,15 +19,15 @@ import {
 import Navbar, {Brand} from 'react-bootstrap/lib/Navbar';
 import history from '../../core/history';
 import $ from "jquery";
-import Sidebar from '../Sidebar';
 
 const logo = require('./sejong_logo.png');
 const sejongBar = require('./sejong_bar.jpg');
+const sejongBarTitle = require('./sejong_deco_title.png');
 
 function Header() {
   return (
     <div id="wrapper" className="content">
-      <Navbar fluid={true}  style={ {margin: 0} }>
+      <Navbar fluid={true}>
           <Brand>
             <span>
               <img src={logo} alt="Start React" title="Start React"/>
@@ -98,9 +98,9 @@ function Header() {
 
           </ul>
           <div className="header-decoration">
-            <img src={sejongBar}/>
+            <img className="bar-img" src={sejongBar}/>
+            <img className="bar-title" src={sejongBarTitle}/>
           </div>
-          <Sidebar /> 
       </Navbar>
     </div>
   );
