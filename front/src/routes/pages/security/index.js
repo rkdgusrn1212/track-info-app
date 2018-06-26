@@ -3,7 +3,7 @@ import Security from './Security';
 
 export default {
 
-  path: '/track/security',
+  path: '/security',
 
   action() {
     return <Security />;

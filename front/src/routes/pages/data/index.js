@@ -3,7 +3,7 @@ import Data from './Data';
 
 export default {
 
-  path: '/track/data',
+  path: '/data',
 
   action() {
     return <Data />;
