@@ -17,36 +17,36 @@ class Mysubject extends React.Component {
 
                 <Row>
                     <div className="table-responsive">
-                    <table className="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>학수 번호</th>
-                            <th>과목 명</th>
-                            <th>교수 명</th>
-                            <th>학년(학기)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1 </td>
-                            <td>Mark </td>
-                            <td>Otto </td>
-                            <td>@mdo </td>
-                        </tr>
-                        <tr>
-                            <td>2 </td>
-                            <td>Jacob </td>
-                            <td>Thornton </td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3 </td>
-                            <td>Larry </td>
-                            <td>the Bird </td>
-                            <td>@twitter </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        <table className="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>학수 번호</th>
+                                <th>과목 명</th>
+                                <th>교수 명</th>
+                                <th>학년(학기)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1 </td>
+                                <td>Mark </td>
+                                <td>Otto </td>
+                                <td>@mdo </td>
+                            </tr>
+                            <tr>
+                                <td>2 </td>
+                                <td>Jacob </td>
+                                <td>Thornton </td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <td>3 </td>
+                                <td>Larry </td>
+                                <td>the Bird </td>
+                                <td>@twitter </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </Row>
             </div>
