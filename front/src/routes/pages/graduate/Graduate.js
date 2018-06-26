@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Col, Row, PageHeader } from 'react-bootstrap';
+import { Col, Row, Panel, PageHeader } from 'react-bootstrap';
 
 class Graduate extends React.Component {
     static contextTypes = { setTitle: PropTypes.func.isRequired };
@@ -12,52 +12,64 @@ class Graduate extends React.Component {
         return (
             <div>
                 <Row>
-                    <PageHeader>트랙 심화과정</PageHeader>
+                    <Col lg={12}>
+                        <PageHeader>트랙 심화과정</PageHeader>
+                    </Col>
                 </Row>
 
-                <Row className="text-center">
+                <Row className="text-center graduate">
                     <Col md={6}>
                         <Row>
-                            <h2>HCI&비주얼 컴퓨팅 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="HCI&비주얼 컴퓨팅 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>멀티미디어 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="멀티미디어 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>사물 인터넷 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="사물 인터넷 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>시스템응용 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="시스템응용 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>인공지능 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="인공지능 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                     </Col>
                     <Col md={6}>
                         <Row>
-                            <h2>SW교육 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="SW교육 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>가상현실 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="가상현실 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>정보보호 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="정보보호 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>데이터사이언스 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="데이터사이언스 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                         <Row>
-                            <h2>사이버국방 트랙</h2>
-                            <h4>교수님 성함</h4>
+                            <Panel header="사이버국방 트랙">
+                                <h4>교수님 성함</h4>
+                            </Panel>
                         </Row>
                     </Col>
                 </Row>
