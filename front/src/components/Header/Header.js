@@ -40,7 +40,7 @@ class Header extends React.Component{
                <span><i className="fa fa-gear fa-fw"></i> Settings </span>
              </MenuItem>
              <MenuItem divider />
-             <MenuItem eventKey = "4" onClick = {this.onLogout()}>
+             <MenuItem eventKey = "4" onClick = {()=>this.onLogout()}>
                <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
              </MenuItem>
        </NavDropdown>
