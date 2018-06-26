@@ -60,7 +60,7 @@ class Login extends React.Component{
           });
           let storage = localStorage;
           storage.setItem('user', JSON.stringify(result));
-          locaion.replace('/');
+          location.replace('/');
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow

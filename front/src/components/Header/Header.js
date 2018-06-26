@@ -29,6 +29,32 @@ class Header extends React.Component{
   onLogout(){
     localStorage.removeItem('user');
   }
+
+  renderLogout(){
+    return(
+      <NavDropdown title={<i className="fa fa-user fa-fw"></i> } id = 'navDropdown4'>
+             <MenuItem eventKey="1">
+               <span> <i className="fa fa-user fa-fw"></i> User Profile </span>
+             </MenuItem>
+             <MenuItem eventKey="2">
+               <span><i className="fa fa-gear fa-fw"></i> Settings </span>
+             </MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey = "4" onClick = {this.onLogout()}>
+               <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
+             </MenuItem>
+       </NavDropdown>
+    );
+  }
+
+  renderLogin(){
+    return(
+      <NavItem onClick = {e =>{e.preventDefault();  history.push('/login') }}>
+        <span> <i className = "fa fa-sign-in fa-fw" /> Login </span>
+      </NavItem>
+    );
+  }
+
   render() {
   return (
     <div id="wrapper" className="content">
@@ -88,18 +114,8 @@ class Header extends React.Component{
                   </MenuItem>
                 </NavDropdown>
 
-           <NavDropdown title={<i className="fa fa-user fa-fw"></i> } id = 'navDropdown4'>
-                  <MenuItem eventKey="1">
-                    <span> <i className="fa fa-user fa-fw"></i> User Profile </span>
-                  </MenuItem>
-                  <MenuItem eventKey="2">
-                    <span><i className="fa fa-gear fa-fw"></i> Settings </span>
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey = "4" onClick = {this.onLogout()}>
-                    <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
-                  </MenuItem>
-            </NavDropdown>
+
+                  {localStorage.getItem('user')!=null?this.renderLogout():this.renderLogin()}
 
           </ul>
           <div className="header-decoration">
