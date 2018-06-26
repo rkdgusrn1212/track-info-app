@@ -3,7 +3,7 @@ import VR from './VR';
 
 export default {
 
-  path: '/track/vr',
+  path: '/vr',
 
   action() {
     return <VR />;

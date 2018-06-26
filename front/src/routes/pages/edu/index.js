@@ -3,7 +3,7 @@ import Edu from './Edu';
 
 export default {
 
-  path: '/track/edu',
+  path: '/edu',
 
   action() {
     return <Edu />;

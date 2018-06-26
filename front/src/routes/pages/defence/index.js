@@ -3,7 +3,7 @@ import Defence from './Defence';
 
 export default {
 
-  path: '/track/defence',
+  path: '/defence',
 
   action() {
     return <Defence />;
