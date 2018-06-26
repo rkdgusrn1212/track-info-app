@@ -9,7 +9,7 @@ from collections import OrderedDict
 
 timeout = 5
 
-driver = webdriver.Chrome('/home/zin/다운로드/chromedriver')
+driver = webdriver.Chrome('chromedriver')
 driver.implicitly_wait(timeout)
 
 def getUisInfo(id, pwd) :
@@ -63,7 +63,9 @@ def getBlBoardInfo(id, pwd) :
 def getDataBlackboard(page, driver) :
     soup = BeautifulSoup(page, 'html.parser')
 
+    page = page[ page.find('global-top-avatar') : ]
     data = OrderedDict()
+    data['userName'] = page[23 : page.find('<')]
 
     all_contents = soup.find_all('div')
     dummyTxt = str(all_contents[17])
@@ -99,11 +101,11 @@ def getDataBlackboard(page, driver) :
         className = strData[23 : ] # 수업이름
 
 
-        data[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum]
+        data[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum, className[ : len(className)-6]]
 
         driver.quit()
     return str(json.dumps(data, ensure_ascii=False, indent="\t"))
 
-print(getBlBoardInfo('13011029', '1'))
+# print(getBlBoardInfo('13011029', '1'))
 # getUisInfo('13011029', '1')
 
