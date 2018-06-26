@@ -18,7 +18,7 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="navbar-default sidebar" role="navigation">
+      <div className="navbar sidebar" role="navigation">
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
           <li>

@@ -21,7 +21,7 @@ body {
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
+        margin: 0 0 0 200px;
         padding: 0 30px;
         border-left: 1px solid #e7e7e7;
     }
@@ -160,7 +160,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 200px;
-        margin-left: 50px;
+        margin-left: 0px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -600,4 +600,9 @@ table.dataTable thead .sorting:after {
 
 .navbar {
     border: none;
+}
+
+.description {
+    padding: 30px 20px;
+    line-height: 30px;
 }
