@@ -45,7 +45,6 @@ class Login extends React.Component{
   }
 
   handleSubmit(){
-    alert("submit");
     this.setState({
       state:"PROGRESS"
     });
@@ -53,7 +52,6 @@ class Login extends React.Component{
       .then(res => res.json())
       .then(
         (result) => {
-          alert("성공");
           this.setState({
             state:"SUCCESS"
           });
