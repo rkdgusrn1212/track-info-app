@@ -26,6 +26,8 @@ import defence from './pages/defence';
 
 import apply from './pages/apply';
 import graduate from './pages/graduate';
+import findtrack from './pages/findtrack';
+import mysubject from './pages/mysubject';
 
 // Child origin routes
 import login from './login';
@@ -99,6 +101,10 @@ export default [
       apply,
       graduate,
       mytrack,
+      findtrack,
+      mysubject,
+
+
       // contact,
       table,
       button,

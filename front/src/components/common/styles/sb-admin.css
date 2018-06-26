@@ -91,6 +91,21 @@ body {
     left: auto;
 }
 
+.header-decoration {
+    position: relative;
+    height: 150px;
+    margin-left: -20px;
+    width: 102%;
+    overflow: hidden;
+}
+
+.header-decoration img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1200px;
+}
+
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
