@@ -22,9 +22,9 @@ class Sidebar extends Component {
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
           <li>
-           <div style={{height:'130px', width:'100%', 'padding-top':'20px'}}>
+           <div style={{height:'130px', width:'100%', 'paddingTop':'20px'}}>
             <Image style={{width:'80px', height:'80px', margin:'0 auto'}} src="./logo.png" circle responsive/>
-            <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'text-align':'center'}}>홍길동</h5>
+            <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'textAlign':'center'}}>홍길동</h5>
            </div>
           </li>
 

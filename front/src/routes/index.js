@@ -13,6 +13,15 @@ import App from '../components/App';
 // Child new routes
 import home from './home';
 import trackinfo from './pages/trackInfo'
+import hci from './pages/hci'
+import multi from './pages/multi'
+import iot from './pages/iot'
+import ai from './pages/ai'
+import vr from './pages/vr'
+import security from './pages/security'
+import data from './pages/data';
+import edu from './pages/edu';
+import defence from './pages/defence';
 
 // Child origin routes
 import login from './login';
@@ -45,8 +54,33 @@ export default [
         <App context={context}>{component}</App>
       );
     },
+  },{
+    path: '/track',
+    children: [
+      hci,
+      multi,
+      iot,
+      system,
+      ai,
+      vr,
+      security,
+      data,
+      edu,
+      defence,
+    ],
+    async action({ next, render, context }) {
+      const component = await next();
+      if (component === undefined) return component;
+      return render(
+        <div>
+          <Header />
+          <div id="page-wrapper" className="page-wrapper">
+            <App context={context}>{component}</App>
+          </div>
+        </div>
+      );
+    },
   },
-
 
   {
     path: '/',
@@ -55,8 +89,8 @@ export default [
     children: [
       home,
       trackinfo,
+      hci,
 
-      
       // contact,
       table,
       button,
@@ -105,5 +139,5 @@ export default [
         <App context={context}>{component}</App>
       );
     },
-  },
+  }
 ];
