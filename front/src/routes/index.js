@@ -10,8 +10,11 @@
 import React from 'react';
 import App from '../components/App';
 
-// Child routes
+// Child new routes
 import home from './home';
+import trackinfo from './pages/trackInfo'
+
+// Child origin routes
 import login from './login';
 import table from './dashboardPages/tables';
 import button from './dashboardPages/buttons';
@@ -51,6 +54,9 @@ export default [
   // keep in mind, routes are evaluated in order
     children: [
       home,
+      trackinfo,
+
+      
       // contact,
       table,
       button,
