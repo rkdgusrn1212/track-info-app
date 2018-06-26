@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import history from '../../core/history';
+import {Row, Col, Image} from 'react-bootstrap';
 
 class Sidebar extends Component {
 
@@ -20,6 +21,12 @@ class Sidebar extends Component {
       <div className="navbar-default sidebar" style={{ marginLeft: '-20px' }} role="navigation">
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
+          <li>
+           <div style={{height:'130px', width:'100%', 'padding-top':'20px'}}>
+            <Image style={{width:'80px', height:'80px', margin:'0 auto'}} src="./logo.png" circle responsive/>
+            <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'text-align':'center'}}>홍길동</h5>
+           </div>
+          </li>
             <li className="sidebar-search">
               <div className="input-group custom-search-form">
                 <input type="text" className="form-control" placeholder="Search..." />
