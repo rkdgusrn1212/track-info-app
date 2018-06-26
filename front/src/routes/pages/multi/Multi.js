@@ -1,8 +1,9 @@
 import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
+import {Row, PageHeader} from 'react-bootstrap';
 
 
 const title = '멀티미디어';
+const descImg = require('../../../public/multi.png');
 
 class Multi extends React.Component {
     constructor(props, context) {
@@ -71,13 +72,17 @@ class Multi extends React.Component {
                     </div>
                 </div>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         멀티미디어 또는 다중 매체는 Multum과 Medium를 합친 낱말이며, 여러 형식의 정보 콘텐츠와 정보 처리 를 사용하여 사용자에게 정보를 제공하고 즐거움을 주는 미디어를 뜻한다. 초기의 컴퓨터에서는 문자만 처리할 수 있었지만 입력과 출력의 기술 향상으로 음향, 영상으로 되어있는 다양한 매체를 처리할 수 있게 되었다.
                     </p>
-                </div>
-                <div className="row">
+                </Row>
+                <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -90,7 +95,7 @@ class Multi extends React.Component {
                         {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }

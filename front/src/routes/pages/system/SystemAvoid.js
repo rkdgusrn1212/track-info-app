@@ -1,8 +1,9 @@
 import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
+import {Row, PageHeader} from 'react-bootstrap';
 
 
 const title = '시스템응용';
+const descImg = require('../../../public/system.png');
 
 class SystemAvoid extends React.Component {
     constructor(props, context) {
@@ -65,19 +66,25 @@ class SystemAvoid extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                <Row>
                     <div className="col-lg-12">
                         <PageHeader>{title}</PageHeader>
                     </div>
-                </div>
+                </Row>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         응용 소프트웨어를 실행하기 위한 플랫폼을 제공하고 컴퓨터 하드웨어를 동작, 접근할 수 있도록 설계된 컴퓨터 소프트웨어이다.[1] 컴퓨터 시스템의 운영을 위한 모든 컴퓨터 소프트웨어에 대한 일반 용어이다.
                     </p>
-                </div>
-                <div className="row">
+                </Row>
+
+
+                <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -90,7 +97,7 @@ class SystemAvoid extends React.Component {
                         {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }

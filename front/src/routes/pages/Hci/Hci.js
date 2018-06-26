@@ -1,8 +1,9 @@
 import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
+import {Row, PageHeader} from 'react-bootstrap';
 
 
 const title = 'HCI & 비쥬얼컴퓨팅';
+const descImg = require('../../../public/hci.png');
 
 class Hci extends React.Component {
 
@@ -66,32 +67,36 @@ class Hci extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                <Row>
                     <div className="col-lg-12">
                         <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
                     </div>
-                </div>
+                </Row>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
                     </p>
-                </div>
-                <div className="row">
+                </Row>
+                <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
-                        {baseItems}
+                            {baseItems}
                         </tbody>
                     </table>
                     <h4>트랙 응용 교과</h4>
                     <table className="track-info-table">
                         <tbody>
-                        {subItems}
+                            {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }
