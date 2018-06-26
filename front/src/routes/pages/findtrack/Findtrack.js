@@ -4,27 +4,30 @@ import { Panel, Col, Row, PageHeader } from 'react-bootstrap';
 var RadarChart = require("react-chartjs").Radar;
 
 
-const data = [
-    { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 },
-    { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 },
-    { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 },
-    { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 },
-    { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 },
-    { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 },
-    { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 },
-];
-
-const data2= {
-    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+const data= {
+    labels: ['멀티미디어', '정보보호', '인공지능', '사물인터넷','시스템응용'],
     datasets: [{
-        data: [20, 10, 4, 2]
+        data: [87, 59, 23, 42, 18]
     }]
 };
 
 const options = {
-    scale: {
-        // Hides the scale
-        display: false
+    gridLines: {
+      color: "black",
+      lineWidth: 3
+    },
+    angleLines: {
+      display: false
+    },
+    ticks: {
+      beginAtZero: true,
+      min: 0,
+      max: 100,
+      stepSize: 20
+    },
+    pointLabels: {
+      fontSize: 18,
+      fontColor: "green"
     }
 };
 
@@ -44,10 +47,8 @@ class Findtrack extends React.Component {
                 </Row>
 
                 <Row className="text-center">
-                  <Col sm={12}>
-                    <Canvas responsive={true}>
-                    <RadarChart data={data2} options={options}/>
-                    </Canvas>
+                  <Col sm={12} >
+                    <RadarChart data={data} options={options}/>
                   </Col>
                 </Row>
             </div>
