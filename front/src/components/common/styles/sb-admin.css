@@ -582,6 +582,7 @@ table.dataTable thead .sorting:after {
     width: 1200px;
     margin: -20px auto;
     background: #fff;
+    box-shadow: 0px 20px 30px 1px #343434;
 }
 
 .page-header {
@@ -605,4 +606,21 @@ table.dataTable thead .sorting:after {
 .description {
     padding: 30px 20px;
     line-height: 30px;
+}
+
+footer {
+    position: relative;
+    background: #f1f1f1;
+    height: 80px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.copyrights {
+    display: block;
+}
+
+.nav a {
+    color: #3969a1;
 }
