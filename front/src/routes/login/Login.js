@@ -11,7 +11,7 @@ import React, { PropTypes } from 'react';
 // import { Panel, Input, Button } from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import Panel from 'react-bootstrap/lib/Panel';
-import { FormControl, Checkbox } from 'react-bootstrap';
+import { FormControl, Checkbox, Alert } from 'react-bootstrap';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Login.css';
 import history from '../../core/history';
@@ -46,40 +46,67 @@ class Login extends React.Component{
 
   handleSubmit(){
     alert("submit");
+    this.setState({
+      state:"PROGRESS"
+    });
     fetch("http://localhost:5000/login?id="+this.state.id+"&pwd="+this.state.pwd)
       .then(res => res.json())
       .then(
         (result) => {
           alert("성공");
-          /*this.setState({
-            isLoaded: true,
-            items: result.items
-          });*/
+          this.setState({
+            state:"SUCCESS"
+          });
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
         (error) => {
           alert("실패")
-          /*this.setState({
-            isLoaded: true,
-            error
-          });*/
+          this.setState({
+            pwd:"",
+            state: "FAIL"
+          });
         }
       )
   }
 
-
-  onSuccess(){
-    this.setState({
-      state:"SUCCESS"
-    });
-  }
-
-  onFail(){
-    this.setState({
-      state:"FAIL"
-    });
+  renderAlert(state){
+    switch(state){
+      case "READY":{
+        return (
+          <Alert bsStyle="info">
+          <strong>환영합니다!</strong> 교내 블랙보드에서 사용하는 학번과 비밀번호를 입력하세요.
+          </Alert>
+        );
+      }
+      case "PROGRESS":{
+        return (
+          <Alert bsStyle="info">
+            <strong>정보를 불러오는중...</strong> 인터넷 상태에 따라 많이 늦을 수 있습니다.
+          </Alert>
+        );
+      }
+      case "SUCCESS":{
+        return(
+          <Alert bsStyle="success">
+            <strong>로그인 성공!</strong>
+          </Alert>
+        )
+      }
+      case "FAIL":{
+        return(
+          <Alert bsStyle="danger">
+            <strong>로그인 실패!</strong> ID 또는 패스워드를 바꿔서 다시 시도해보세요.
+          </Alert>
+        )
+      }
+    }
+    return(
+      <Alert bsStyle="warning">
+        <strong>Holy guacamole!</strong> 에러
+      </Alert>
+    );
   }
 
   render(){
@@ -90,7 +117,7 @@ class Login extends React.Component{
           </div>
 
           <Panel header={<h3>Please Sign In</h3>} className="login-panel">
-
+            {this.renderAlert(this.state.state)}
             <form role="form">
               <fieldset>
                 <div className="form-group">
