@@ -41,7 +41,7 @@ def getBlBoardInfo(id, pwd) :
         return
 
     # global driver
-    driver = webdriver.Chrome('/home/zin/다운로드/chromedriver')
+    driver = webdriver.Chrome('chromedriver')
     driver.implicitly_wait(timeout)
 
     driver.get('https://blackboard.sejong.ac.kr/webapps/login/')
@@ -86,6 +86,7 @@ def getDataBlackboard(page, driver) :
     driver.get('https://blackboard.sejong.ac.kr/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&forwardUrl=edit_module%2F_3_1%2Fbbcourseorg%3Fcmd%3Dedit&recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1')
     dummyTxt = driver.page_source
 
+    dict = {}
 
     while True:
         if (dummyTxt.find('miniListElement-coursesInstructor-coursename:row') == -1) :
@@ -101,10 +102,12 @@ def getDataBlackboard(page, driver) :
         classNum = strData[18 : 21] # 분반
         className = strData[23 : ] # 수업이름
 
+        dict[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum, className[ : len(className)-6]]
+        data.pop(className)
 
-        data[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum, className[ : len(className)-6]]
+    data['lecture'] = dict
 
-        driver.quit()
+    driver.quit()
     return str(json.dumps(data, ensure_ascii=False, indent="\t"))
 
 # print(getBlBoardInfo('13011029', '1'))

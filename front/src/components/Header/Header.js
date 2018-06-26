@@ -22,6 +22,7 @@ import $ from "jquery";
 import Sidebar from '../Sidebar';
 
 const logo = require('./sejong_logo.png');
+const sejongBar = require('./sejong_bar.jpg');
 
 function Header() {
   return (
@@ -96,8 +97,11 @@ function Header() {
             </NavDropdown>
 
           </ul>
-          <Sidebar />
-    </Navbar>
+          <div className="header-decoration">
+            <img src={sejongBar}/>
+          </div>
+          <Sidebar /> 
+      </Navbar>
     </div>
   );
 }
