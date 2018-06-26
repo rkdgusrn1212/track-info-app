@@ -8,6 +8,25 @@ class Mysubject extends React.Component {
         super(props, context);
     }
 
+    renderLecture(lecture){
+      return(
+        <tr>
+            <td>{lecture[1]+(lecture[3]==1?(lecture[2]==1?"여름학기":"겨울학기"):"-"+lecture[2])} </td>
+            <td>{lecture[7]+"("+lecture[6]+")"}</td>
+            <td>{lecture[0]}</td>
+            <td>{lecture[5]}</td>
+        </tr>
+      );
+    }
+    renderLectureList(lectures){
+      let item = [];
+      for(let key in lectures){
+        item.push(this.renderLecture(lectures[key]));
+      }
+      return (
+        <tbody>{item}</tbody>);
+    }
+
     render() {
         return (
             <div>
@@ -20,32 +39,14 @@ class Mysubject extends React.Component {
                         <table className="table table-striped">
                             <thead>
                             <tr>
-                                <th>학수 번호</th>
+                                <th>학기</th>
                                 <th>과목 명</th>
                                 <th>교수 명</th>
-                                <th>학년(학기)</th>
+                                <th>학수번호</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>1 </td>
-                                <td>Mark </td>
-                                <td>Otto </td>
-                                <td>@mdo </td>
-                            </tr>
-                            <tr>
-                                <td>2 </td>
-                                <td>Jacob </td>
-                                <td>Thornton </td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3 </td>
-                                <td>Larry </td>
-                                <td>the Bird </td>
-                                <td>@twitter </td>
-                            </tr>
-                            </tbody>
+                            {this.renderLectureList(JSON.parse(localStorage.getItem('user')).lecture)}
+
                         </table>
                     </div>
                 </Row>
