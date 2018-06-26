@@ -1,11 +1,11 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
-import time
+import json
+from collections import OrderedDict
 
 timeout = 5
 
@@ -60,7 +60,7 @@ def getBlBoardInfo(id, pwd) :
 def getDataBlackboard(page) :
     soup = BeautifulSoup(page, 'html.parser')
 
-    list = []
+    data = OrderedDict()
 
     all_contents = soup.find_all('div')
     dummyTxt = str(all_contents[17])
@@ -70,16 +70,19 @@ def getDataBlackboard(page) :
             break
         dummyTxt = dummyTxt[dummyTxt.find('type=Course&amp;id=') : ]
 
-        print(dummyTxt[dummyTxt.find('_top')+6:dummyTxt.find('</a>')])
-        list.append(dummyTxt[dummyTxt.find('_top')+6:dummyTxt.find('</a>')])
+        key = dummyTxt[dummyTxt.find('_top')+6:dummyTxt.find('</a>')]
+        # list.append(dummyTxt[dummyTxt.find('_top')+6:dummyTxt.find('</a>')])
         dummyTxt = dummyTxt[dummyTxt.find('</span>')+3 : ]
         if (dummyTxt.find('noItems')) :
-            print(dummyTxt[dummyTxt.find('noItems')+9 : dummyTxt.find('</span>')])
-        print(dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')])
-        list.append(dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')])
+            # print(dummyTxt[dummyTxt.find('noItems')+9 : dummyTxt.find('</span>')])
+            value = dummyTxt[dummyTxt.find('noItems')+9 : dummyTxt.find('</span>')]
+        # print(dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')])
+        value = dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')]
+        data[key] = value
+        # list.append(dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')])
 
-    print(list)
-    return str(list)
+    return str(json.dumps(data, ensure_ascii=False, indent="\t"))
+
 # getBlBoardInfo()
 # getUisInfo()
 
