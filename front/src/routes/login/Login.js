@@ -45,6 +45,9 @@ class Login extends React.Component{
   }
 
   handleSubmit(){
+    if(this.state.state==="PROGRESS"){
+      return;
+    }
     this.setState({
       state:"PROGRESS"
     });
@@ -55,6 +58,8 @@ class Login extends React.Component{
           this.setState({
             state:"SUCCESS"
           });
+          let storage = localStorage;
+          storage.setItem('user', JSON.stringify(result));
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
