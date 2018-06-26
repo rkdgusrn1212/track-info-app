@@ -2,16 +2,15 @@ import React,{PropTypes} from 'react';
 import {PageHeader} from 'react-bootstrap';
 
 
-const title = 'HCI & 비쥬얼컴퓨팅';
+const title = '멀티미디어';
 
-class Hci extends React.Component {
-
+class Multi extends React.Component {
     constructor(props, context) {
         super(props, context);
         context.setTitle(title);
         this.state = {
-            base : ['선형대수및프로그래밍', '컴퓨터그래픽스', '웹프로그래밍'],
-            sub : ['영상처리', 'HCI개론', '웹프로그래밍설계', '웹기반시스템', '윈도우즈프로그래밍', 'XML프로그래밍', '데이터컴퓨팅', '정보검색']
+            base : ['멀티미디어', '선형대수및프로그래밍', '통계학개론'],
+            sub : ['신호및시스템', '디지털신호처리', '멀티미디어데이터베이스', '패턴인식', '컴퓨터비전시스템', '영상처리', '영상처리프로그래밍', '모바일프로그래밍']
         }
     }
 
@@ -68,14 +67,14 @@ class Hci extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>HCI & 비쥬얼컴퓨팅</PageHeader>
+                        <PageHeader>{title}</PageHeader>
                     </div>
                 </div>
 
                 <div className="row">
                     <h4>소개</h4>
                     <p style={introStyle}>
-                        인간과 컴퓨터 상호 작용(Human-computer interaction)은 인간(사용자)과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다.
+                        멀티미디어 또는 다중 매체는 Multum과 Medium를 합친 낱말이며, 여러 형식의 정보 콘텐츠와 정보 처리 를 사용하여 사용자에게 정보를 제공하고 즐거움을 주는 미디어를 뜻한다. 초기의 컴퓨터에서는 문자만 처리할 수 있었지만 입력과 출력의 기술 향상으로 음향, 영상으로 되어있는 다양한 매체를 처리할 수 있게 되었다.
                     </p>
                 </div>
                 <div className="row">
@@ -97,6 +96,6 @@ class Hci extends React.Component {
     }
 }
 
-Hci.contextTypes = { setTitle: PropTypes.func.isRequired };
+Multi.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default Hci;
+export default Multi;
