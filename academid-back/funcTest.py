@@ -14,7 +14,7 @@ def getUisInfo(id, pwd) :
     if (id == None or pwd == None):
         return
 
-    driver = webdriver.Chrome('chromedriver')
+    driver = webdriver.Chrome('/home/zin/IdeaProjects/track-info-app/academid-back/chromedriver')
     driver.implicitly_wait(timeout)
 
     driver.get('https://portal.sejong.ac.kr/jsp/login/uisloginSSL.jsp')
@@ -102,8 +102,11 @@ def getDataBlackboard(page, driver) :
         classNum = strData[18 : 21] # 분반
         className = strData[23 : ] # 수업이름
 
-        dict[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum, className[ : len(className)-6]]
-        data.pop(className)
+        try :
+            dict[className] = [data.get(className), date, semester, isPreSemester, major, classPk, classNum, className[ : len(className)-6]]
+            data.pop(className)
+        except Exception as ex :
+            continue
 
     data['lecture'] = dict
 
