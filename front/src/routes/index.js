@@ -41,6 +41,7 @@ import panelwells from './dashboardPages/panelWells';
 import typography from './dashboardPages/typography';
 import blank from './dashboardPages/blank';
 import error from './error';
+import mytrack from './pages/mytrack';
 
 import Header from '../components/Header';
 
@@ -97,7 +98,7 @@ export default [
 
       apply,
       graduate,
-
+      mytrack,
       // contact,
       table,
       button,
