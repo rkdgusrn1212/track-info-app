@@ -9,14 +9,14 @@
 
 import React from 'react';
 // import App from '../../components/App';
-import Multi from './Multi';
+import Iot from './Iot';
 
 export default {
 
-  path: '/multi',
+  path: '/iot',
 
   action() {
-    return <Multi />;
+    return <Iot />;
   },
 
 };

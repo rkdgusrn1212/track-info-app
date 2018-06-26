@@ -9,14 +9,14 @@
 
 import React from 'react';
 // import App from '../../components/App';
-import Multi from './Multi';
+import Ai from './Ai';
 
 export default {
 
-  path: '/multi',
+  path: '/ai',
 
   action() {
-    return <Multi />;
+    return <Ai />;
   },
 
 };

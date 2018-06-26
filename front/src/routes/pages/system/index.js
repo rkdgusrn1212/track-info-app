@@ -9,14 +9,14 @@
 
 import React from 'react';
 // import App from '../../components/App';
-import Multi from './Multi';
+import System from './System';
 
 export default {
 
-  path: '/multi',
+  path: '/system',
 
   action() {
-    return <Multi />;
+    return <System />;
   },
 
 };
