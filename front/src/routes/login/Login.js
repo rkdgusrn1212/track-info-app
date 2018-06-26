@@ -30,8 +30,8 @@ class Login extends React.Component{
     super(props, context);
     context.setTitle(title);
     this.state={
-      userId:"",
-      password:"",
+      id:"",
+      pwd:"",
       state:"READY"
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -46,7 +46,7 @@ class Login extends React.Component{
 
   handleSubmit(){
     alert("submit");
-    fetch("http://localhost:5000/login")
+    fetch("http://localhost:5000/login?id="+this.state.id+"&pwd="+this.state.pwd)
       .then(res => res.json())
       .then(
         (result) => {
@@ -99,6 +99,7 @@ class Login extends React.Component{
                     className="form-control"
                     placeholder="Username"
                     name="id"
+                    id="id"
                     onChange={this.handleInputChange}
                   />
                 </div>
@@ -109,6 +110,7 @@ class Login extends React.Component{
                     placeholder="Password"
                     type="password"
                     name="pwd"
+                    id="pwd"
                     onChange={this.handleInputChange}
                   />
                 </div>

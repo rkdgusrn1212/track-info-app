@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Panel, Col, Row, PageHeader } from 'react-bootstrap';
 
-import Donut from '../../../components/Donut';
+var RadarChart = require("react-chartjs").Radar;
+
 
 const data = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 },
@@ -12,6 +13,21 @@ const data = [
     { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 },
     { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 },
 ];
+
+const data2= {
+    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    datasets: [{
+        data: [20, 10, 4, 2]
+    }]
+};
+
+const options = {
+    scale: {
+        // Hides the scale
+        display: false
+    }
+};
+
 
 class Findtrack extends React.Component {
     static contextTypes = { setTitle: PropTypes.func.isRequired };
@@ -28,27 +44,11 @@ class Findtrack extends React.Component {
                 </Row>
 
                 <Row className="text-center">
-                    <Col md={4}>
-                        <Panel header="가장 가까운 트랙">
-                            <div>
-                                <Donut data={data} color="#8884d8" innerRadius="70%" outerRadius="90%" />
-                            </div>
-                        </Panel>
-                    </Col>
-                    <Col md={4}>
-                        <Panel header="학점 평균이 높은 트랙">
-                            <div>
-                                <Donut data={data} color="#8884d8" innerRadius="70%" outerRadius="90%" />
-                            </div>
-                        </Panel>
-                    </Col>
-                    <Col md={4}>
-                        <Panel header=" 수강을 가장 많이 한 트랙">
-                            <div>
-                                <Donut data={data} color="#8884d8" innerRadius="70%" outerRadius="90%" />
-                            </div>
-                        </Panel>
-                    </Col>
+                  <Col sm={12}>
+                    <Canvas responsive={true}>
+                    <RadarChart data={data2} options={options}/>
+                    </Canvas>
+                  </Col>
                 </Row>
             </div>
         );

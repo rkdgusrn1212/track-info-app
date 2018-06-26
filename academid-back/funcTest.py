@@ -112,4 +112,3 @@ def getDataBlackboard(page, driver) :
 
 # print(getBlBoardInfo('13011029', '1'))
 # getUisInfo('13011029', '1')
-
