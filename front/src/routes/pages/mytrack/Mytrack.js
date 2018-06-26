@@ -78,6 +78,78 @@ class Mytrack extends React.Component {
       );
     }
 
+    renderSingleRequire(trackName, trackSpec, lectures){
+      let pCount = 0;//필수 비충족수
+      let pTotal = trackSpec["트랙기초교과"].length;//전체 필수과목
+      let cCount = 0;//선택 비충족수
+      let cTotal;
+      let pText="";
+      let cText="";
+      if(trackSpec["트랙응용교과"].length>6){
+        cTotal = 6;
+      }else{
+        cTotal = trackSpec["트랙응용교과"].length;
+      }
+      for(let i=0; i< trackSpec["트랙기초교과"].length; i++){
+        let flag = true;
+        for(let j in lectures){
+          if(lectures[j][7]==trackSpec["트랙기초교과"][i]){
+            flag = false;
+          }
+        }
+        if(flag){
+          pCount++;
+          if(pCount>1){
+            pText+=", ";
+          }
+          pText+=trackSpec["트랙기초교과"][i];
+        }
+      }
+      for(let i=0; i< trackSpec["트랙응용교과"].length; i++){
+        let flag = true;
+        for(let j in lectures){
+          if(lectures[j][7]==trackSpec["트랙응용교과"][i]){
+            flag = false;
+          }
+        }
+        if(flag){
+          cCount++;
+          if(cCount>1){
+            cText+=", ";
+          }
+          cText+=trackSpec["트랙응용교과"][i];
+        }
+      }
+      //et pPercent = (pTotal+cTotal-pCount)*100/(pTotal+cTotal);
+      //let cPercent = (pTotal+cTotal-cCount)*100/(pTotal+cTotal);
+      return(
+        <tr>
+          <td>{trackName}</td>
+          <td>{pText}</td>
+          <td>{cText}</td>
+        </tr>
+      );
+    }
+
+    renderMyRequire(lectures){
+      if(lectures == null){
+        return(
+          <tbody>
+            <Alert bsStyle="warning">로그인이 먼저 필요합니다.</Alert>
+          </tbody>
+        );
+      }
+      let items = [];
+      for(let key in TrackInfo){
+        items.push(this.renderSingleRequire(key,TrackInfo[key],lectures));
+      }
+      return(
+        <tbody>
+        {items}
+        </tbody>
+      );
+    }
+
     render() {
       let lectures;
       if(localStorage.getItem('user')!=null){
@@ -103,32 +175,12 @@ class Mytrack extends React.Component {
                             <table className="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>학수 번호</th>
-                                    <th>과목 명</th>
-                                    <th>교수 명</th>
-                                    <th>학년(학기)</th>
+                                    <th>트랙명</th>
+                                    <th>필수 이수 과목</th>
+                                    <th>선택 이수 과목</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1 </td>
-                                    <td>Mark </td>
-                                    <td>Otto </td>
-                                    <td>@mdo </td>
-                                </tr>
-                                <tr>
-                                    <td>2 </td>
-                                    <td>Jacob </td>
-                                    <td>Thornton </td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>3 </td>
-                                    <td>Larry </td>
-                                    <td>the Bird </td>
-                                    <td>@twitter </td>
-                                </tr>
-                                </tbody>
+                                {this.renderMyRequire(lectures)}
                             </table>
                         </div>
                     </Panel>
