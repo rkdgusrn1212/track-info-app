@@ -3,6 +3,8 @@ import { PageHeader } from 'react-bootstrap';
 
 const PageTitle = 'Track Infomation';
 
+const infoImg = require('../../../public/track_info.png');
+
 class TrackInfo extends React.Component {
     static contextTypes = { setTitle: PropTypes.func.isRequired };
 
@@ -10,7 +12,6 @@ class TrackInfo extends React.Component {
         super(props, context);
         context.setTitle(PageTitle);
     }
-
 
     render() {
         return (
@@ -29,6 +30,10 @@ class TrackInfo extends React.Component {
                     <p>
                         HCI&비주얼컴퓨팅, 멀티미디어, 사물인터넷, 시스템응용, 인공지능, 가상현실, 정보보호, 데이터사이언스, SW교육, 사이버국방 의 트랙이 있고, 하나의 트랙을 인증받기 위해서 트랙기초교과의 전교과와 6개 이상의 교과를 트랙응용교과에서 선택이수하여야 합니다.
                     </p>
+                </div>
+
+                <div style={{textAlign : "center"}} className="row">
+                    <img src={infoImg}/>
                 </div>
             </div>
         );
