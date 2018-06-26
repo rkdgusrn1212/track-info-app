@@ -41,7 +41,7 @@ def getBlBoardInfo(id, pwd) :
         return
 
     # global driver
-    driver = webdriver.Chrome('/home/zin/다운로드/chromedriver')
+    driver = webdriver.Chrome('chromedriver')
     driver.implicitly_wait(timeout)
 
     driver.get('https://blackboard.sejong.ac.kr/webapps/login/')
