@@ -17,14 +17,20 @@ class Sidebar extends Component {
   }
 
   render() {
+    let username;
+    if(localStorage.getItem('user')!=null){
+      username = JSON.parse(localStorage.getItem('user')).userName;
+    }else{
+      username = "Guest"
+    }
     return (
       <div className="navbar sidebar" role="navigation">
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
-          <li>
-           <div style={{height:'130px', width:'100%', 'paddingTop':'20px'}}>
+          <li style={{padding: 20}}>
+            <div style={{height:'130px', width:'100%', 'padding':'10px'}}>
             <Image style={{width:'80px', height:'80px', margin:'0 auto'}} src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" circle responsive/>
-            <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'textAlign':'center'}}>{JSON.parse(localStorage.getItem('user')).userName}</h5>
+            <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'textAlign':'center'}}>{username}</h5>
            </div>
           </li>
 

@@ -1,8 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Panel, Col, Row, PageHeader } from 'react-bootstrap';
 
-var RadarChart = require("react-chartjs").Radar;
+import {Radar} from 'react-chartjs';
 
+//var RadarChart = require("react-chartjs").Radar;
+
+/*
+
+width={500} height={500} 
+
+*/
 
 const data= {
     labels: ['멀티미디어', '정보보호', '인공지능', '사물인터넷','시스템응용'],
@@ -48,7 +55,7 @@ class Findtrack extends React.Component {
 
                 <Row className="text-center">
                   <Col sm={12} >
-                    <RadarChart data={data} options={options}/>
+                    <Radar data={data} options={options} width={600} height={600}/>
                   </Col>
                 </Row>
             </div>

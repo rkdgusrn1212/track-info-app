@@ -19,6 +19,9 @@ class Mysubject extends React.Component {
       );
     }
     renderLectureList(lectures){
+      if(lectures == null){
+        return <tbody/>
+      }
       let item = [];
       for(let key in lectures){
         item.push(this.renderLecture(lectures[key]));
@@ -28,6 +31,12 @@ class Mysubject extends React.Component {
     }
 
     render() {
+      let lectures;
+      if(localStorage.getItem('user')!=null){
+        lectures = JSON.parse(localStorage.getItem('user')).lecture;
+      }else{
+        lectures = null;
+      }
         return (
             <div>
                 <Row>
@@ -45,8 +54,7 @@ class Mysubject extends React.Component {
                                 <th>학수번호</th>
                             </tr>
                             </thead>
-                            {this.renderLectureList(JSON.parse(localStorage.getItem('user')).lecture)}
-
+                            {this.renderLectureList(lectures)}
                         </table>
                     </div>
                 </Row>

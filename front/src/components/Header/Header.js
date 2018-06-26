@@ -24,7 +24,39 @@ const logo = require('./sejong_logo.png');
 const sejongBar = require('./sejong_bar.jpg');
 const sejongBarTitle = require('./sejong_deco_title.png');
 
-function Header() {
+class Header extends React.Component{
+
+  onLogout(){
+    localStorage.removeItem('user');
+    location.reload();
+  }
+
+  renderLogout(){
+    return(
+      <NavDropdown title={<i className="fa fa-user fa-fw"></i> } id = 'navDropdown4'>
+             <MenuItem eventKey="1">
+               <span> <i className="fa fa-user fa-fw"></i> User Profile </span>
+             </MenuItem>
+             <MenuItem eventKey="2">
+               <span><i className="fa fa-gear fa-fw"></i> Settings </span>
+             </MenuItem>
+             <MenuItem divider />
+             <MenuItem eventKey = "4" onClick = {()=>this.onLogout()}>
+               <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
+             </MenuItem>
+       </NavDropdown>
+    );
+  }
+
+  renderLogin(){
+    return(
+      <NavItem onClick = {e =>{e.preventDefault();  history.push('/login') }}>
+        <span> <i className = "fa fa-sign-in fa-fw" /> Login </span>
+      </NavItem>
+    );
+  }
+
+  render() {
   return (
     <div id="wrapper" className="content">
       <Navbar fluid={true}>
@@ -83,18 +115,8 @@ function Header() {
                   </MenuItem>
                 </NavDropdown>
 
-           <NavDropdown title={<i className="fa fa-user fa-fw"></i> } id = 'navDropdown4'>
-                  <MenuItem eventKey="1">
-                    <span> <i className="fa fa-user fa-fw"></i> User Profile </span>
-                  </MenuItem>
-                  <MenuItem eventKey="2">
-                    <span><i className="fa fa-gear fa-fw"></i> Settings </span>
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey = "4" onClick = {(event) => { history.push('/login');}}>
-                    <span> <i className = "fa fa-sign-out fa-fw" /> Logout </span>
-                  </MenuItem>
-            </NavDropdown>
+
+                  {localStorage.getItem('user')!=null?this.renderLogout():this.renderLogin()}
 
           </ul>
           <div className="header-decoration">
@@ -104,6 +126,7 @@ function Header() {
       </Navbar>
     </div>
   );
+  }
 }
 function toggleMenu(){
     if($(".navbar-collapse").hasClass('collapse')){
@@ -112,6 +135,5 @@ function toggleMenu(){
     else{
       $(".navbar-collapse").addClass('collapse');
     }
-  }
-
+}
 export default Header;
