@@ -24,6 +24,8 @@ import data from './pages/data';
 import edu from './pages/edu';
 import defence from './pages/defence';
 
+import apply from './pages/apply';
+
 // Child origin routes
 import login from './login';
 import table from './dashboardPages/tables';
@@ -91,6 +93,8 @@ export default [
       home,
       trackinfo,
       hci,
+
+      apply,
 
       // contact,
       table,
