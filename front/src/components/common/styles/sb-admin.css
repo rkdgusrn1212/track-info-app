@@ -5,7 +5,7 @@
  */
 
 body {
-    background-color: #f8f8f8;
+    background: linear-gradient(-90deg, #00188e, #ffffff , #ffffff, #00188e);
 }
 
 #wrapper {
@@ -14,7 +14,7 @@ body {
 
 #page-wrapper {
     padding: 20px;
-    min-height: 568px;
+    min-height: 1000px;
     background-color: #fff;
 }
 
@@ -99,11 +99,18 @@ body {
     overflow: hidden;
 }
 
-.header-decoration img {
+.header-decoration .bar-img {
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -1200px;
+}
+
+.header-decoration .bar-title {
+    position: absolute;
+    width: 830px;
+    right: -130px;
+    top: 9px;
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
@@ -152,8 +159,8 @@ body {
     .sidebar {
         z-index: 1;
         position: absolute;
-        width: 250px;
-        margin-top: 51px;
+        width: 200px;
+        margin-left: 50px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -567,4 +574,30 @@ table.dataTable thead .sorting:after {
         border-right-width: 14px;
         border-left-width: 0;
     }
+}
+
+/*======================*/
+.page-content {
+    position: relative;
+    width: 1200px;
+    margin: -20px auto;
+    background: #fff;
+}
+
+.page-header {
+    border-bottom: 3px solid #5d5d5d;
+    box-shadow: 10px 12px 0px -10px #9f9b9b;
+}
+
+.page-header h1 {
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.sidebar {
+    font-weight: bold;
+}
+
+.navbar {
+    border: none;
 }

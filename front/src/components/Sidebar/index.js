@@ -18,7 +18,7 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="navbar-default sidebar" style={{ marginLeft: '-20px' }} role="navigation">
+      <div className="navbar-default sidebar" role="navigation">
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
           <li>
@@ -30,12 +30,12 @@ class Sidebar extends Component {
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} >
-                <i className="fa fa-home fa-fw" /> &nbsp;홈
+                소개
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/trackinfo'); }} >
-                <i className="fa fa-question fa-fw" /> &nbsp;트랙이란
+                트랙이란
               </a>
             </li>
             <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
@@ -47,7 +47,7 @@ class Sidebar extends Component {
                 }); return false;
                 }}
               >
-                <i className="fa fa-info fa-fw" /> &nbsp;트랙소개<span className="fa arrow" />
+                트랙소개<span className="fa arrow" />
               </a>
 
               <ul
@@ -113,32 +113,32 @@ class Sidebar extends Component {
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/apply'); }} >
-                <i className="fa fa-arrow-circle-up fa-fw" /> &nbsp;트랙 신청
+                트랙 신청
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/graduate'); }} >
-                <i className="fa fa-university fa-fw" /> &nbsp;트랙 심화과정
+                트랙 심화과정
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/mytrack'); }} >
-                <i className="fa fa-flag fa-fw" /> &nbsp;나의 트랙이수현황
+                나의 트랙이수현황
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/findtrack'); }} >
-                <i className="fa fa-search fa-fw" /> &nbsp;나와 비슷한 트랙 찾기
+                나와 비슷한 트랙 찾기
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/mysubject'); }} >
-                <i className="fa fa-graduation-cap fa-fw" /> &nbsp;이미 수강한 과목
+                이미 수강한 과목
               </a>
             </li>
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/board'); }} >
-                <i className="fa fa-comments fa-fw" /> &nbsp;게시판
+                게시판
               </a>
             </li>
           </ul>

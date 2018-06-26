@@ -20,7 +20,7 @@ class Home extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <PageHeader>아카데미아에 대한 소개</PageHeader>
+                        <PageHeader>아카데미아 소개</PageHeader>
                     </div>
                 </div>
 
