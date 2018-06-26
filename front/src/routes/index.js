@@ -67,6 +67,11 @@ export default [
     async action({ next, render, context }) {
       const component = await next();
       if (component === undefined) return component;
+
+      document.body.style.backgroundImage = `url(${backgroundImg})`;
+      document.body.style.backgroundPosition = '52% 52%';
+      document.body.style.backgroundSize = '2800px';
+
       return render(
         <App context={context}>
           <div style={background}>
