@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Col, Row, PageHeader, ProgressBar, Panel, Alert } from 'react-bootstrap';
+import { Col, Row, PageHeader, ProgressBar, Panel, Alert, Label } from 'react-bootstrap';
 import TrackInfo from '../../../TrackInfo';
 
 const title = "나의 트랙이수현황";
@@ -73,6 +73,10 @@ class Mytrack extends React.Component {
       return(
         <Panel
         header="트랙 별 나의 이수 현황">
+        <h4 style={{ textAlign:'right'}}>
+        <Label bsStyle="success">트랙기초</Label>{'  '}
+        <Label bsStyle="warning">트랙응용</Label>{'  '}
+        </h4>
             {items}
         </Panel>
       );
