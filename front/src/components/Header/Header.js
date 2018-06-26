@@ -111,8 +111,7 @@ class Header extends React.Component{
 
   renderTrack(lectures){
     if(lectures == null){
-      return(
-          <Alert bsStyle="warning">로그인이 먼저 필요합니다.</Alert>);
+      return;
     }
     let items = [];
     let count = 0;

@@ -117,7 +117,8 @@ class Login extends React.Component{
     return (
         <div className="col-md-4 col-md-offset-4">
           <div className="text-center">
-            <h1 className="login-brand-text">아카데미아</h1>
+            <h1 onClick = {e =>{e.preventDefault();  history.push('/') }} className="login-brand-text"><b>ACADEMIA</b></h1>
+            <p>Created By 코딩대장</p>
           </div>
 
           <Panel header={<h3>Please Sign In</h3>} className="login-panel">
