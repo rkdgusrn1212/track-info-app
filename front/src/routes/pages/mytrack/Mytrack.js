@@ -175,7 +175,7 @@ class Mytrack extends React.Component {
                             <table className="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>트랙명</th>
+                                    <th style={{width:'15%'}}>트랙명</th>
                                     <th>필수 이수 과목</th>
                                     <th>선택 이수 과목</th>
                                 </tr>
