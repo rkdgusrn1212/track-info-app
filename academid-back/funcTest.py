@@ -16,6 +16,7 @@ def getUisInfo(id, pwd) :
     if (id == None or pwd == None):
         return
 
+    global driver
     driver.get('https://portal.sejong.ac.kr/jsp/login/uisloginSSL.jsp')
 
     driver.find_element_by_name('id').send_keys(id)
@@ -39,7 +40,7 @@ def getBlBoardInfo(id, pwd) :
     if (id == None or pwd == None):
         return
 
-    driver = webdriver.Chrome('/home/zin/다운로드/chromedriver')
+    global driver
     driver.implicitly_wait(timeout)
 
     driver.get('https://blackboard.sejong.ac.kr/webapps/login/')
@@ -76,7 +77,7 @@ def getDataBlackboard(page, driver) :
         dummyTxt = dummyTxt[dummyTxt.find('</span>')+3 : ]
         if (dummyTxt.find('noItems') != -1) :
             value = dummyTxt[dummyTxt.find('noItems')+9 : dummyTxt.find('</span>')]
-        value = dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')]
+        value = dummyTxt[dummyTxt.find('name')+7 : dummyTxt.find('</span>')-3]
         data[key] = value
 
     driver.get('https://blackboard.sejong.ac.kr/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&forwardUrl=edit_module%2F_3_1%2Fbbcourseorg%3Fcmd%3Dedit&recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1')
