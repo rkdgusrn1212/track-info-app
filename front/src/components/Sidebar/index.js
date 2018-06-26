@@ -27,72 +27,17 @@ class Sidebar extends Component {
             <h5 style={{height:'20px', width:'80px', margin:'10px auto', 'text-align':'center'}}>홍길동</h5>
            </div>
           </li>
-            <li className="sidebar-search">
-              <div className="input-group custom-search-form">
-                <input type="text" className="form-control" placeholder="Search..." />
-                <span className="input-group-btn">
-                  <button className="btn btn-default" type="button">
-                    <i className="fa fa-search" />
-                  </button>
-                </span>
-              </div>
-            </li>
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} >
-                <i className="fa fa-dashboard fa-fw" /> &nbsp;Dashboard
+                <i className="fa fa-home fa-fw" /> &nbsp;홈
               </a>
             </li>
-
-            <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ chartsElementsCollapsed: !this.state.chartsElementsCollapsed });
-                  return false;
-                }}
-              >
-                <i className="fa fa-bar-chart-o fa-fw" /> &nbsp;Charts
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true,
-                    collapse: this.state.chartsElementsCollapsed,
-                  })
-              }
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/flotcharts'); }} >
-                    FlotCharts
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={(e) => { e.preventDefault(); history.push('/morrisjscharts'); }}
-                  >
-                    Morrisjs Charts
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/table'); }} >
-                <i className="fa fa-table fa-fw" /> &nbsp;Tables
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/trackinfo'); }} >
+                <i className="fa fa-question fa-fw" /> &nbsp;트랙이란
               </a>
             </li>
-
-            <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/forms'); }} >
-                <i className="fa fa-table fa-fw" /> &nbsp;Forms
-              </a>
-            </li>
-
             <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
               <a
                 href=""
@@ -102,7 +47,7 @@ class Sidebar extends Component {
                 }); return false;
                 }}
               >
-                <i className="fa fa-edit fa-fw" /> UI Elements<span className="fa arrow" />
+                <i className="fa fa-info fa-fw" /> &nbsp;트랙소개<span className="fa arrow" />
               </a>
 
               <ul
@@ -112,142 +57,84 @@ class Sidebar extends Component {
                 })}
               >
                 <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/panelwells'); }} >
-                    Panels And Wells
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/hci'); }} >
+                    HCI & 비쥬얼컴퓨팅
                   </a>
                 </li>
                 <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/button'); }} >
-                    Buttons
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/multi'); }} >
+                    멀티미디어
                   </a>
                 </li>
                 <li>
                   <a
                     href=""
-                    onClick={(e) => { e.preventDefault(); history.push('/notification'); }}
+                    onClick={(e) => { e.preventDefault(); history.push('/track/iot'); }}
                   >
-                    Notification
+                    사물인터넷
                   </a>
                 </li>
                 <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/typography'); }} >
-                    Typography
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/system'); }} >
+                    시스템응용
                   </a>
                 </li>
                 <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/icons'); }} >
-                    Icons
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/ai'); }} >
+                    인공지능
                   </a>
                 </li>
                 <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/grid'); }} >
-                    Grid
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/vr'); }} >
+                    가상현실
+                  </a>
+                </li>
+                <li>
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/security'); }} >
+                    정보보호
+                  </a>
+                </li>
+                <li>
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/data'); }} >
+                    데이터사이언스
+                  </a>
+                </li>
+                <li>
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/edu'); }} >
+                    SW교육
+                  </a>
+                </li>
+                <li>
+                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/track/defence'); }} >
+                    사이버국방
                   </a>
                 </li>
               </ul>
             </li>
-
-            <li className={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
-                    multiLevelDropdownCollapsed: !this.state.multiLevelDropdownCollapsed,
-                  });
-                  return false;
-                }}
-              >
-                <i className="fa fa-sitemap fa-fw" />
-                &nbsp;Multi-Level Dropdown
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true, collapse: this.state.multiLevelDropdownCollapsed,
-                  })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
-                </li>
-                <li className={classNames({ active: !this.state.thirdLevelDropdownCollapsed })}>
-                  <a
-                    href=""
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.setState({
-                        thirdLevelDropdownCollapsed: !this.state.thirdLevelDropdownCollapsed,
-                      });
-                      return false;
-                    }}
-                  >
-                    Third Level<span className="fa arrow" />
-                  </a>
-                  <ul
-                    className={
-                      classNames({
-                        'nav nav-second-level': true,
-                        collapse: this.state.thirdLevelDropdownCollapsed,
-                      })}
-                  >
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
-                    samplePagesCollapsed: !this.state.samplePagesCollapsed,
-                  });
-                  return false;
-                }}
-              >
-                <i className="fa fa-files-o fa-fw" />
-                &nbsp;Sample Pages
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true,
-                    collapse: this.state.samplePagesCollapsed,
-                  })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/blank'); }} >
-                    Blank
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/login'); }} >
-                    Login
-                  </a>
-                </li>
-              </ul>
-            </li>
-
             <li>
-              <a href="http://www.strapui.com/">Premium React Themes</a>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/graduate'); }} >
+                <i className="fa fa-university fa-fw" /> &nbsp;대학원
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/mytrack'); }} >
+                <i className="fa fa-flag fa-fw" /> &nbsp;나의 트랙이수현황
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/findtrack'); }} >
+                <i className="fa fa-search fa-fw" /> &nbsp;나와 비슷한 트랙 찾기
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/mysubject'); }} >
+                <i className="fa fa-graduation-cap fa-fw" /> &nbsp;이미 수강한 과목
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/board'); }} >
+                <i className="fa fa-comments fa-fw" /> &nbsp;게시판
+              </a>
             </li>
           </ul>
         </div>
