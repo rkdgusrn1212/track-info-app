@@ -21,49 +21,68 @@ const title = 'Log In';
 
 function submitHandler(e) {
   e.preventDefault();
-  history.push('/');
+  console.log(e);
+  //history.push('http://localhost:5000/login?id='+e);
 }
 
-function Login(props, context) {
-  context.setTitle(title);
-  return (
-    <div className="col-md-4 col-md-offset-4">
-      <div className="text-center">
-        <h1 className="login-brand-text">SB Admin React</h1>
-        <h3 className="text-muted">Created by <a href="http://startreact.com">StartReact.com</a> team</h3>
-      </div>
+class Login extends React.Component{
+  constructor(props, context) {
+    super(props, context);
+    context.setTitle(title);
+    this.state={
+      userId:"",
+      password:"",
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
 
-      <Panel header={<h3>Please Sign In</h3>} className="login-panel">
+  handleInputChange(event){
+    this.setState({
+      [event.target.id]:event.target.value
+    });
+  }
 
-        <form role="form" onSubmit={(e) => { submitHandler(e); }}>
-          <fieldset>
-            <div className="form-group">
-              <FormControl
-                type="text"
-                className="form-control"
-                placeholder="Username"
-                name="name"
-              />
-            </div>
+  render(){
+    return (
+        <div className="col-md-4 col-md-offset-4">
+          <div className="text-center">
+            <h1 className="login-brand-text">아카데미아</h1>
+          </div>
 
-            <div className="form-group">
-              <FormControl
-                className="form-control"
-                placeholder="Password"
-                type="password"
-                name="password"
-              />
-            </div>
-            <Checkbox label="Remember Me" > Remember Me </Checkbox>
-            <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
-          </fieldset>
-        </form>
+          <Panel header={<h3>Please Sign In</h3>} className="login-panel">
 
-      </Panel>
+            <form action="http://localhost:5000/login" role="form">
+              <fieldset>
+                <div className="form-group">
+                  <FormControl
+                    type="text"
+                    className="form-control"
+                    placeholder="Username"
+                    name="id"
+                    onChange={this.handleInputChange}
+                  />
+                </div>
 
-    </div>
+                <div className="form-group">
+                  <FormControl
+                    className="form-control"
+                    placeholder="Password"
+                    type="password"
+                    name="pwd"
+                    onChange={this.handleInputChange}
+                  />
+                </div>
+                <Checkbox label="Remember Me" > Remember Me </Checkbox>
+                <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
+              </fieldset>
+            </form>
 
-  );
+          </Panel>
+
+        </div>
+
+      );
+  }
 }
 
 
