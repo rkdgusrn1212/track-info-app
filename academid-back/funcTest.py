@@ -9,14 +9,14 @@ from collections import OrderedDict
 
 timeout = 5
 
-driver = webdriver.Chrome('chromedriver')
-driver.implicitly_wait(timeout)
 
 def getUisInfo(id, pwd) :
     if (id == None or pwd == None):
         return
 
-    global driver
+    driver = webdriver.Chrome('chromedriver')
+    driver.implicitly_wait(timeout)
+
     driver.get('https://portal.sejong.ac.kr/jsp/login/uisloginSSL.jsp')
 
     driver.find_element_by_name('id').send_keys(id)
@@ -40,7 +40,8 @@ def getBlBoardInfo(id, pwd) :
     if (id == None or pwd == None):
         return
 
-    global driver
+    # global driver
+    driver = webdriver.Chrome('/home/zin/다운로드/chromedriver')
     driver.implicitly_wait(timeout)
 
     driver.get('https://blackboard.sejong.ac.kr/webapps/login/')
