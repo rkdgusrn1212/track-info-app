@@ -1,6 +1,8 @@
 
 import React, { PropTypes } from 'react';
-import { PageHeader } from 'react-bootstrap';
+import { Row, PageHeader } from 'react-bootstrap';
+
+const descImg = require('../../../public/data.png');
 
 class Data extends React.Component {
     constructor(props, context) {
@@ -62,20 +64,24 @@ class Data extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                <Row>
                     <div className="col-lg-12">
                         <PageHeader>데이터 사이언스</PageHeader>
                     </div>
-                </div>
+                </Row>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         데이터의 구체적인 내용이 아닌 서로 다른 성질의 내용이나 형식의 데이터에 공통으로 존재하는 성질, 또는 그것들을 다루기 위한 기술의 개발에 착안점을 둔다는 특징을 가진다.
                     </p>
-                </div>
+                </Row>
 
-                 <div className="row">
+                 <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -88,7 +94,7 @@ class Data extends React.Component {
                         {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }

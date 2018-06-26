@@ -624,3 +624,11 @@ footer {
 .nav a {
     color: #3969a1;
 }
+
+.track-description, .track-img {
+    width: 720px;
+}
+
+.track-description {
+    margin: 20px auto;
+}

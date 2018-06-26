@@ -1,6 +1,8 @@
 
 import React, { PropTypes } from 'react';
-import { PageHeader } from 'react-bootstrap';
+import { Row, PageHeader } from 'react-bootstrap';
+
+const descImg = require('../../../public/defense.png');
 
 class Defence extends React.Component {
     constructor(props, context) {
@@ -62,20 +64,24 @@ class Defence extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                <Row>
                     <div className="col-lg-12">
                         <PageHeader>사이버 국방</PageHeader>
                     </div>
-                </div>
+                </Row>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         사이버 국방.
                     </p>
-                </div>
+                </Row>
 
-                 <div className="row">
+                 <Row className="track-description">
                     <h4>교과목들</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -84,7 +90,7 @@ class Defence extends React.Component {
                     </table>
 
                     <p>이 외 군관련 과목 7학점 이상 이수</p>
-                </div>
+                </Row>
             </div>
         );
     }

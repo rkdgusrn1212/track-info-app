@@ -1,8 +1,9 @@
 import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
+import {Row, PageHeader} from 'react-bootstrap';
 
 
 const title = '사물인터넷';
+const descImg = require('../../../public/iot.png');
 
 class Iot extends React.Component {
     constructor(props, context) {
@@ -71,13 +72,17 @@ class Iot extends React.Component {
                     </div>
                 </div>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         사물인터넷은 각종 사물에 센서와 통신 기능을 내장하여 인터넷에 연결하는 기술. 즉, 무선 통신을 통해 각종 사물을 연결하는 기술을 의미한다. 인터넷으로 연결된 사물들이 데이터를 주고받아 스스로 분석하고 학습한 정보를 사용자에게 제공하거나 사용자가 이를 원격 조정할 수 있는 인공지능 기술이다. 여기서 사물이란 가전제품, 모바일 장비, 웨어러블 디바이스 등 다양한 임베디드 시스템이 된다.
                     </p>
-                </div>
-                <div className="row">
+                </Row>
+                <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -90,7 +95,7 @@ class Iot extends React.Component {
                         {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }

@@ -1,8 +1,9 @@
 import React,{PropTypes} from 'react';
-import {PageHeader} from 'react-bootstrap';
+import {Row, PageHeader} from 'react-bootstrap';
 
 
 const title = '인공지능';
+const descImg = require('../../../public/ai.png');
 
 class Ai extends React.Component {
     constructor(props, context) {
@@ -65,19 +66,24 @@ class Ai extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                <Row>
                     <div className="col-lg-12">
                         <PageHeader>{title}</PageHeader>
                     </div>
-                </div>
+                </Row>
 
-                <div className="row">
+                <Row className="text-center">
+                    <img className="track-img" src={descImg}/>
+                </Row>
+
+                <Row className="track-description">
                     <h4>소개</h4>
                     <p style={introStyle}>
                         인공지능은 기계로부터 만들어진 지능을 말한다. 컴퓨터 공학에서 이상적인 지능을 갖춘 존재, 혹은 시스템에 의해 만들어진 지능, 즉 인공적인 지능을 뜻한다. 일반적으로 범용 컴퓨터에 적용한다고 가정한다. 이 용어는 또한 그와 같은 지능을 만들 수 있는 방법론이나 실현 가능성 등을 연구하는 과학 분야를 지칭하기도 한다.
                     </p>
-                </div>
-                <div className="row">
+                </Row>
+                
+                <Row className="track-description">
                     <h4>트랙 기초 교과</h4>
                     <table className="track-info-table">
                         <tbody>
@@ -90,7 +96,7 @@ class Ai extends React.Component {
                         {subItems}
                         </tbody>
                     </table>
-                </div>
+                </Row>
             </div>
         );
     }
