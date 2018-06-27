@@ -642,3 +642,7 @@ footer {
     margin-top: 20px;
     height: 30px;
 }
+
+.navbar-brand b {
+  cursor: pointer;
+}
